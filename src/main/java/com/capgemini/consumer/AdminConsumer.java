@@ -24,6 +24,6 @@ public class AdminConsumer {
         Product product = mapper.readValue(productJson, Product.class);
         //need to save the product data in db coming from seller
         productRepository.save(product);
-        logger.info("Admin received product for approval: " + product.getProductName());
+        logger.info("Admin received product for approval: " + product.getProductTitle());
     }
 }

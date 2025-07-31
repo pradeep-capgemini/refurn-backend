@@ -4,94 +4,129 @@ import java.util.Date;
 
 import com.capgemini.enums.ProductStatus;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "product")
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String productName;
-    private String category;
-    private String description;
-    private byte[] productImg;
-    private Double price;
-    private Double discount;
-    private String productSellerName;
+    private Long productId;
+    private String productTitle;
+    private double productRating;
+    private int productReviews;
+    private String productDescription;
+    private double productPrice;
+    private String productDiscount;
+    private byte[] productImage;
     private ProductStatus productStatus;
     private Date createdAt;
-	public Long getId() {
-		return id;
+    private String productSellerName;
+
+    public Product() {}
+    
+	public Product(Long productId, String productTitle, double productRating, int productReviews,
+			String productDescription, double productPrice, String productDiscount, byte[] productImage) {
+		this.productId = productId;
+		this.productTitle = productTitle;
+		this.productRating = productRating;
+		this.productReviews = productReviews;
+		this.productDescription = productDescription;
+		this.productPrice = productPrice;
+		this.productDiscount = productDiscount;
+		this.productImage = productImage;
 	}
-	public void setId(Long id) {
-		this.id = id;
+
+	public Long getProductId() {
+		return productId;
 	}
-	public String getProductName() {
-		return productName;
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
 	}
-	public void setProductName(String productName) {
-		this.productName = productName;
+
+	public String getProductTitle() {
+		return productTitle;
 	}
-	public String getCategory() {
-		return category;
+
+	public void setProductTitle(String productTitle) {
+		this.productTitle = productTitle;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+
+	public double getProductRating() {
+		return productRating;
 	}
-	public String getDescription() {
-		return description;
+
+	public void setProductRating(double productRating) {
+		this.productRating = productRating;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+
+	public int getProductReviews() {
+		return productReviews;
 	}
-	
-	public Double getPrice() {
-		return price;
+
+	public void setProductReviews(int productReviews) {
+		this.productReviews = productReviews;
 	}
-	public void setPrice(Double price) {
-		this.price = price;
+
+	public String getProductDescription() {
+		return productDescription;
 	}
-	public Double getDiscount() {
-		return discount;
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
 	}
-	public void setDiscount(Double discount) {
-		this.discount = discount;
+
+	public double getProductPrice() {
+		return productPrice;
 	}
-	public String getProductSellerName() {
-		return productSellerName;
+
+	public void setProductPrice(double productPrice) {
+		this.productPrice = productPrice;
 	}
-	public void setProductSellerName(String productSellerName) {
-		this.productSellerName = productSellerName;
+
+	public String getProductDiscount() {
+		return productDiscount;
 	}
-	public Product() {
-		super();
-		// TODO Auto-generated constructor stub
+
+	public void setProductDiscount(String productDiscount) {
+		this.productDiscount = productDiscount;
 	}
+
+	public byte[] getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(byte[] productImage) {
+		this.productImage = productImage;
+	}
+
 	public ProductStatus getProductStatus() {
 		return productStatus;
 	}
+
 	public void setProductStatus(ProductStatus productStatus) {
 		this.productStatus = productStatus;
 	}
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}
+
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-	public byte[] getProductImg() {
-		return productImg;
+
+	public String getProductSellerName() {
+		return productSellerName;
 	}
-	public void setProductImg(byte[] productImg) {
-		this.productImg = productImg;
-	}
+
+	public void setProductSellerName(String productSellerName) {
+		this.productSellerName = productSellerName;
+	}   
 	
 	
 
-    
 }
 
