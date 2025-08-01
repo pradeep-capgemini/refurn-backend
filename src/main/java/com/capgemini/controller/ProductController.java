@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.capgemini.entity.Product;
 import com.capgemini.service.ProductService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/refurn/products")
-@CrossOrigin(origins = "http://localhost:4200")
 public class ProductController {
 
     @Autowired

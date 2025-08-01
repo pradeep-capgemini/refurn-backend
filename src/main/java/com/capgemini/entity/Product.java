@@ -19,7 +19,7 @@ public class Product {
     private String productDescription;
     private double productPrice;
     private String productDiscount;
-    private byte[] productImage;
+    private String productImage;
     private ProductStatus productStatus;
     private Date createdAt;
     private String productSellerName;
@@ -27,7 +27,7 @@ public class Product {
     public Product() {}
     
 	public Product(Long productId, String productTitle, double productRating, int productReviews,
-			String productDescription, double productPrice, String productDiscount, byte[] productImage) {
+			String productDescription, double productPrice, String productDiscount, String productImage) {
 		this.productId = productId;
 		this.productTitle = productTitle;
 		this.productRating = productRating;
@@ -94,11 +94,11 @@ public class Product {
 		this.productDiscount = productDiscount;
 	}
 
-	public byte[] getProductImage() {
+	public String getProductImage() {
 		return productImage;
 	}
 
-	public void setProductImage(byte[] productImage) {
+	public void setProductImage(String productImage) {
 		this.productImage = productImage;
 	}
 
